@@ -7,6 +7,10 @@ img {
     border: 5px solid white;
 } 
 
+button{
+    margin-top: 20px;
+}
+
 h1{
    text-align: center;
     color: white;
@@ -19,11 +23,23 @@ header {
     background-color: blue;
     width: 100%;
 }
+main {
+    width: 75%;
+    display: inline-block;
+    margin-left: 20px;
+}
 
 
-
-
-
+/* Aside Class - Right Side */
+aside{
+    margin-right: 20px;
+    padding: 20px;
+    clear: both;
+    float: right;
+    width: 20%;
+    height: 100%;
+    background-color:gray;
+}
 
 /* Footer */
 footer {
