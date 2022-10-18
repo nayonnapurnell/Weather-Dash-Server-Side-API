@@ -8,8 +8,11 @@ img {
 } 
 
 h1{
-    text-align: center;
+   text-align: center;
     color: white;
+}
+.currentCityWeather{
+    text-align: center;
 }
 
 header {
