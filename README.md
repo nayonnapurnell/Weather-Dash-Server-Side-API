@@ -37,7 +37,7 @@ https://nayonnapurnell.github.io/Weather-Dash-Server-Side-API/
 
 The following image demonstrates the web application's Wireframe:
 
-![Note: This layout is designed for desktop viewing, you may notice that some of the elements don't look exactly like the mock-up at a resolution smaller than 768px.](./Assets/csimages/weather-dashboard-wireframe.png)
+![Note: This layout is designed for desktop viewing, you may notice that some of the elements don't look exactly like the mock-up at a resolution smaller than 768px.](./Assets/images/weather-dashboard-wireframe.png)
 
 ## Mock-Up
 The following image demonstrates the web application's appearance and functionality:
