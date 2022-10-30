@@ -7,6 +7,7 @@ var countryCode = 'US';
 var tempCityDateEl = document.querySelector('#tempCityDate');
 var windCityDateEl = document.querySelector('#windCityDate');
 var humidityCityDateEl = document.querySelector('#humidityCityDate');
+var weatherIcon = document.querySelector('#weather-icon');
 
  
 var apiKey = '416e955c8b7d5eebd548200f74e3a752';
@@ -14,40 +15,37 @@ var apiKey = '416e955c8b7d5eebd548200f74e3a752';
 
 
 function getWeather() {
-//'https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid=416e955c8b7d5eebd548200f74e3a752'
-
-
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${citySearchInput.value},${stateSearchInput.value},us&appid=416e955c8b7d5eebd548200f74e3a752`)
+  
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${citySearchInput.value},${stateSearchInput.value},us&appid=416e955c8b7d5eebd548200f74e3a752&units=imperial`)
     .then(res => res.json())
     .then(data => {
       console.log(data);
-      tempCityDateEl.innerText = "Temp: " + JSON.stringify(data.main.temp);
-      humidityCityDateEl.innerText = "Humidity: " + JSON.stringify(data.main.humidity);
-      windCityDateEl.innerText = "Wind: " + JSON.stringify(data.wind.speed);
+      tempCityDateEl.innerText = "Temp: " + JSON.stringify(data.main.temp) + ' \u00B0' +  "F";
+      humidityCityDateEl.innerText = "Humidity: " + JSON.stringify(data.main.humidity) + "%";
+      windCityDateEl.innerText = "Wind: " + JSON.stringify(data.wind.speed) + " MPH";
+      //weatherIcon.innerText = JSON.stringify(data.weather[0].icon);
+      //weatherIcon.src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
 
     });
 
 }
 
-function displayWeather(){
+function display5DAyWeather(){
+  fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${citySearchInput.value},${stateSearchInput.value},us&appid=416e955c8b7d5eebd548200f74e3a752&units=imperial`)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
 
-      //tempCityDateEl.innerText = "Temp" + tempCityDateEl;
-      //tempCityDateEl.innerText = `Temp: `;
-      windCityDateEl.innerText = `Wind:` + wind;
-     // humidityCityDateEl.innerText = `Humidity: ${data.humidity}`;
-
+    });
 }
 
 
 var weatherSearchBtn = document.getElementById('weatherSearchButton');
 //citySearchInput.value = localStorage.getItem("citySearch");
 
-
 function getCityInput() {
-  //localStorage.setItem("citySearch", citySearchInput.value);
-  //humidityCityDateEl.innerText = "Loading ...";
  getWeather();
- displayWeather();
+ display5DAyWeather();
 }
 
 weatherSearchBtn.addEventListener("click", getCityInput);
