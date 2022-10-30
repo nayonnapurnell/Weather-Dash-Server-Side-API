@@ -18,9 +18,9 @@
     <main>
         <section class="currentCityWeather">
             <h2>City Date</h2>
-            <div id="temp">Temp</div>
-            <div id="wind">Wind</div>
-            <div id="humidity">Humidity</div>
+            <div id="tempCityDate"></div>
+            <div id="windCityDate"></div>
+            <div id="humidityCityDate"></div>
         </section>
         <section class="5DayWeatherForecast">
             <h2>5-Day Forecast</h2>
@@ -74,11 +74,12 @@
         </section>
     </main>
     <aside>
-        <h2>Search for a City: </h2>
-        <div>
-            <input type="search" class="form-control rounded" placeholder="" aria-label="Search" aria-describedby="search-addon" />
-            <button type="button" class="btn btn-primary btn-lg w-100" id="weatherSearchResult">search</button>
-          </div>
+        <h3>Search for a City &#38; State: </h2>
+        <div class="input-group">     
+          <input type="search" class="form-control" id="citySearch" placeholder="Enter City" aria-label="Search" aria-describedby="search-addon" />
+          <input type="search" class="form-control" id="stateSearch" placeholder="Enter State" aria-label="Search" aria-describedby="search-addon" />
+          <button type="button" class="btn btn-primary btn-lg w-100" id="weatherSearchButton">search</button>      
+        </div>
     </aside>
     <footer>
         <p>Nayonna Purnell | <i class="fa fa-linkedin-square" style="font-size:24px"></i><a
