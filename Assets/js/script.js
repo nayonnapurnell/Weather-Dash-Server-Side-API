@@ -21,15 +21,19 @@ function getWeather() {
     .then(res => res.json())
     .then(data => {
       console.log(data);
-         
+      tempCityDateEl.innerText = "Temp: " + JSON.stringify(data.main.temp);
+      humidityCityDateEl.innerText = "Humidity: " + JSON.stringify(data.main.humidity);
+      windCityDateEl.innerText = "Wind: " + JSON.stringify(data.wind.speed);
+
     });
 
 }
 
-function displayWeather(data){
-  tempCityDateEl.innerText = "Temp: " + `${data}`;
-  //tempCityDateEl.innerText = `Temp: ${data}`;
-      //windCityDateEl.innerText = `Wind: ${data.wind}`;
+function displayWeather(){
+
+      //tempCityDateEl.innerText = "Temp" + tempCityDateEl;
+      //tempCityDateEl.innerText = `Temp: `;
+      windCityDateEl.innerText = `Wind:` + wind;
      // humidityCityDateEl.innerText = `Humidity: ${data.humidity}`;
 
 }
