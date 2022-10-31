@@ -33,24 +33,39 @@ function getWeather() {
 
 function display5DayWeather(){
   //5-Day Weather Forecast Information
+  /***************************************/
+  //Day 1
   var day1Date = document.querySelector('#day-1-date');
   var day1Temp = document.querySelector('#day-1-temp');
   var day1Wind = document.querySelector('#day-1-wind');
   var day1Humidity = document.querySelector('#day-1-humidity');
+  //Day 2
+  var day2Date = document.querySelector('#day-2-date');
+  var day2Temp = document.querySelector('#day-2-temp');
+  var day2Wind = document.querySelector('#day-2-wind');
+  var day2Humidity = document.querySelector('#day-2-humidity');
+
+  //Day 3
+
+  //Day 4
+
+  //Day 5
 
   fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${citySearchInput.value},${stateSearchInput.value},us&appid=416e955c8b7d5eebd548200f74e3a752&units=imperial`)
     .then(res => res.json())
     .then(data => {
      console.log(data);
      //Day 1 Weather
-     day1Date.innerText = "Date: " + JSON.stringify(data.list[16].dt_txt);
-     day1Temp.innerText = "Temp: " + JSON.stringify(Math.round(data.list[16].main.temp)) + ' \u00B0' +  "F";
-     day1Wind.innerText = "Wind: " + JSON.stringify(Math.round(data.list[16].wind.speed)) + " MPH";
-     day1Humidity.innerText = "Humidity: " + JSON.stringify(Math.round(data.list[16].main.humidity)) + "%";
+     day1Date.innerText = "Date: " + JSON.stringify(data.list[0].dt_txt);
+     day1Temp.innerText = "Temp: " + JSON.stringify(Math.round(data.list[0].main.temp)) + ' \u00B0' +  "F";
+     day1Wind.innerText = "Wind: " + JSON.stringify(Math.round(data.list[0].wind.speed)) + " MPH";
+     day1Humidity.innerText = "Humidity: " + JSON.stringify(Math.round(data.list[0].main.humidity)) + "%";
 
      //Day 2 Weather
-     day2Temp.innerText = "Temp: " + JSON.stringify(Math.round(data.list[16].main.temp)) + ' \u00B0' +  "F";
-
+     day2Date.innerText = "Date: " + JSON.stringify(data.list[8].dt_txt);
+     day2Temp.innerText = "Temp: " + JSON.stringify(Math.round(data.list[8].main.temp)) + ' \u00B0' +  "F";
+     day2Wind.innerText = "Wind: " + JSON.stringify(Math.round(data.list[8].wind.speed)) + " MPH";
+     day2Humidity.innerText = "Humidity: " + JSON.stringify(Math.round(data.list[8].main.humidity)) + "%";
      //Day 3 Weather
 
      //Day 4 Weather
