@@ -19,13 +19,15 @@ function getWeather() {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${citySearchInput.value},${stateSearchInput.value},us&appid=416e955c8b7d5eebd548200f74e3a752&units=imperial`)
     .then(res => res.json())
     .then(data => {
-      console.log(data);
+      console.log(data);     
       cityDateEl.innerText = citySearchInput.value + " ("+ new Date((data.dt)*1000).toDateString()+")";
       tempCityDateEl.innerText = "Temp: " + JSON.stringify(Math.round(data.main.temp)) + ' \u00B0' +  "F";
       humidityCityDateEl.innerText = "Humidity: " + JSON.stringify(data.main.humidity) + "%";
       windCityDateEl.innerText = "Wind: " + JSON.stringify(Math.round(data.wind.speed)) + " MPH";
       var weatherIcon= data.weather[0].icon;
       weatherIconEL.setAttribute("src",`https://openweathermap.org/img/wn/${weatherIcon}@2x.png`);
+
+
     });
 
 }
@@ -114,6 +116,13 @@ var weatherSearchBtn = document.getElementById('weatherSearchButton');
 function getCityInput() {
  getWeather();
  display5DayWeather();
+ citySearchInput.value = localStorage.getItem("citySearch");
+ stateSearchInput.value = localStorage.getItem("stateSearch");
+ localStorage.setItem("citySearch", citySearchInput.value);
+ localStorage.setItem("stateSearch", stateSearchInput.value);
+
 }
 
 weatherSearchBtn.addEventListener("click", getCityInput);
+
+

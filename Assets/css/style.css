@@ -11,8 +11,11 @@ button{
 }
 
 h1{
-   text-align: center;
+   text-align: left;
     color: white;
+}
+h2 #cityDate{
+    text-align: center;
 }
 .currentCityWeather{
     text-align: center;
