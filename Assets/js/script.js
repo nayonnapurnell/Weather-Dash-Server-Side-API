@@ -118,6 +118,9 @@ function getCityInput() {
  display5DayWeather();
  citySearchInput.value = localStorage.getItem("citySearch");
  stateSearchInput.value = localStorage.getItem("stateSearch");
+//  if(citySearchInput.value) {
+//   document.getElementById('citySearch') = citySearchInput.value;
+// }
  localStorage.setItem("citySearch", citySearchInput.value);
  localStorage.setItem("stateSearch", stateSearchInput.value);
 
