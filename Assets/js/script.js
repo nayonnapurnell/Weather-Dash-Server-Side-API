@@ -9,6 +9,7 @@ var windCityDateEl = document.querySelector('#windCityDate');
 var humidityCityDateEl = document.querySelector('#humidityCityDate');
 var cardBodyCl = document.querySelector('.card-body');
 var weatherIconEL = document.querySelector('#weather-icon');
+document.getElementById('localStorageButton').hidden = true
 var apiKey = '416e955c8b7d5eebd548200f74e3a752';
 
 
@@ -118,9 +119,6 @@ function getCityInput() {
  display5DayWeather();
  citySearchInput.value = localStorage.getItem("citySearch");
  stateSearchInput.value = localStorage.getItem("stateSearch");
-//  if(citySearchInput.value) {
-//   document.getElementById('citySearch') = citySearchInput.value;
-// }
  localStorage.setItem("citySearch", citySearchInput.value);
  localStorage.setItem("stateSearch", stateSearchInput.value);
 

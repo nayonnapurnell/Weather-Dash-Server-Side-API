@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Weather Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="Assets/reset.css">
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body>
     <header>
         <h1>Weather Dashboard</h1>
-        <div class="header-image">
+        <div class="header-image overflow-scroll">
             <img src="assets/images/headerimage.jpeg" alt="Four Seasons Image">
         </div>
     </header>
@@ -25,7 +25,7 @@
         </section>
         <section class="5DayWeatherForecast">
             <h2>5-Day Forecast:</h2>
-            <div class="card-group">
+            <div class="card-group overflow-scroll">
                 <div class="card">
                  <img id="weather-icon-1-day" src="" alt="">
                   <div class="card-body">
@@ -35,7 +35,7 @@
                       <p class="card-text" id="day-1-humidity">Humidity: </p>
                   </div>
                 </div>
-                <div class="card">
+                <div class="card overflow-scroll">
                    <img id="weather-icon-2-day" src="" alt="">
                   <div class="card-body">
                     <h5 class="card-title" id="day-2-date">Date</h5>
@@ -44,7 +44,7 @@
                       <p class="card-text" id="day-2-humidity">Humidity: </p>
                   </div>
                 </div>
-                <div class="card">
+                <div class="card overflow-scroll">
                    <img id="weather-icon-3-day" src="" alt="">
                   <div class="card-body">
                     <h5 class="card-title" id="day-3-date">Date</h5>
@@ -53,7 +53,7 @@
                       <p class="card-text" id="day-3-humidity">Humidity: </p>
                   </div>
                 </div>
-                <div class="card">
+                <div class="card overflow-scroll">
                      <img id="weather-icon-4-day" src="" alt="">
                     <div class="card-body">
                       <h5 class="card-title" id="day-4-date">Date</h5>
@@ -62,7 +62,7 @@
                       <p class="card-text" id="day-4-humidity">Humidity: </p>
                     </div>
                   </div>
-                  <div class="card">
+                  <div class="card overflow-scroll">
                     <img id="weather-icon-5-day" src="" alt="">
                     <div class="card-body">
                       <h5 class="card-title" id="day-5-date">Date</h5>
@@ -76,13 +76,13 @@
     </main>
     <aside>
         <h3>Search for a City &#38; State: </h2>
-        <div class="input-group">     
+        <div class="input-group overflow-scroll">     
           <input type="search" class="form-control" id="citySearch" placeholder="Enter City" aria-label="Search" aria-describedby="search-addon" />
           <input type="search" class="form-control" id="stateSearch" placeholder="Enter State" aria-label="Search" aria-describedby="search-addon" />
           <button type="button" class="btn btn-primary btn-lg w-100" id="weatherSearchButton">search</button>      
         </div>
         <div>
-          <!-- <input class="btn btn-primary" id= "localStorageButton" type="reset" value=""> -->
+          <input class="btn btn-primary" id= "localStorageButton" type="reset" value="">
         </div>
     </aside>
     <footer>
