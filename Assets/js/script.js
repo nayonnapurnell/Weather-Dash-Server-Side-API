@@ -9,7 +9,8 @@ var windCityDateEl = document.querySelector('#windCityDate');
 var humidityCityDateEl = document.querySelector('#humidityCityDate');
 var cardBodyCl = document.querySelector('.card-body');
 var weatherIconEL = document.querySelector('#weather-icon');
-document.getElementById('localStorageButton').hidden = true
+var localStorageBtn = document.getElementById('localStorageButton').style.display = "none";
+var localStoreBtnName = document.getElementById('localStoreBtnName');
 var apiKey = '416e955c8b7d5eebd548200f74e3a752';
 
 
@@ -27,8 +28,8 @@ function getWeather() {
       windCityDateEl.innerText = "Wind: " + JSON.stringify(Math.round(data.wind.speed)) + " MPH";
       var weatherIcon= data.weather[0].icon;
       weatherIconEL.setAttribute("src",`https://openweathermap.org/img/wn/${weatherIcon}@2x.png`);
-
-
+      
+      localStorageBtn.innerText = `${citySearchInput.value}`;
     });
 
 }
@@ -116,7 +117,9 @@ var weatherSearchBtn = document.getElementById('weatherSearchButton');
 
 function getCityInput() {
  getWeather();
- display5DayWeather();
+ display5DayWeather(); 
+ document.getElementById('localStorageButton').style.display = "block";
+ localStoreBtnName.innerText = `${citySearchInput.value}`;
  citySearchInput.value = localStorage.getItem("citySearch");
  stateSearchInput.value = localStorage.getItem("stateSearch");
  localStorage.setItem("citySearch", citySearchInput.value);
