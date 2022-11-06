@@ -2,6 +2,7 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 20px;
     border: 5px solid white;
 } 
 
@@ -29,16 +30,18 @@ main {
     display: inline-block;
     margin-left: 20px;
 }
+.card-group{
+    margin-bottom: 100px;
+}
 
 
 /* Aside Class - Right Side */
 aside{
-    margin-right: 20px;
+    margin-right: 0px;
     padding: 20px;
     clear: both;
     float: right;
     width: 20%;
-    height: 100%;
     background-color:gray;
 }
 
